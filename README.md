@@ -1,0 +1,1 @@
+Pet project weather app with React+Redux and API - https://openweathermap.org/api
