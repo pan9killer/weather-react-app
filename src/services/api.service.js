@@ -14,7 +14,7 @@ export async function getWeatherDataOnLoad(){
         appid: '15e2d862129fa12a6ba6633847af27ed'
       }
     })
-    .then((response) => response);
+    .then((response) => response.data);
     return getWeatherDataOnLoad;
   }catch(err){
     console.log(err);
@@ -34,7 +34,7 @@ export async function getWeatherDataFromInput(){
         appid: '15e2d862129fa12a6ba6633847af27ed'
       }
     })
-    .then((response) => response);
+    .then((response) => response.data);
     return getWeatherDataFromInput;
   }catch(err){
     console.log(err);

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
-import Find from './components/Find';
+import SearchBlock from './components/searchBlock';
+import WeatherBlock from './components/weatherBlock';
 import {getWeatherDataFromInput, getWeatherDataOnLoad , getCityLatLon} from './services/api.service'
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
 
   return (
     <div className="App">
-      <Find />
+      <SearchBlock city={cityLatLon}/>
+      <WeatherBlock />
     </div>
   );
 }
