@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
-import Find from './components/Find';
-import {getWeatherDataFromInput, getWeatherDataOnLoad , getCityLatLon} from './services/api.service'
+import {useEffect, useState} from 'react';
+import styles from './App.module.scss';
+import SearchBlock from '../searchBlock';
+import WeatherBlock from '../weatherBlock';
+import {getWeatherDataFromInput, getWeatherDataOnLoad , getCityLatLon} from '../../services/api.service'
 
-function App() {
+const App = () => {
   const[weather1, setWeather1] = useState({});
   const[weather2, setWeather2] = useState({});
   const[cityLatLon, setCityLatLon] = useState({});
@@ -26,8 +27,9 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Find />
+    <div className={styles.app}>
+      <SearchBlock city={cityLatLon}/>
+      <WeatherBlock />
     </div>
   );
 }
