@@ -1,9 +1,8 @@
-import React from 'react';
-import "./SearchBlock.css"
+import styles from "./SearchBlock.module.scss"
 
 const SearchBlock = (city) => {
   return(
-    <div className="search__block">
+    <div className={styles.search__block}>
       <h1>Weather in</h1>
         <div className="input-group mb-3">
         <input type="text" className="form-control" placeholder="City" aria-label="Recipient's username" aria-describedby="button-addon2" />
