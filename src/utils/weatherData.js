@@ -1,4 +1,10 @@
-const weatherData = [
+export const whatADay = (date) => {
+  const showDate = new Date(date * 1000);
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wensday', 'Thursday', 'Friday', 'Saturday'];
+  return daysOfWeek[showDate.getDay()];
+}
+
+export const weatherData = [
   {
     name: 'Monday',
     uv: 30
@@ -28,5 +34,3 @@ const weatherData = [
     uv: 21
   },
 ];
-
-export default weatherData;

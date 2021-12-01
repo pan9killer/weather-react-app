@@ -1,5 +1,5 @@
 import { BarChart, Bar, XAxis, YAxis } from "recharts";
-import weatherData from "../../utils/weatherData";
+import {weatherData} from "../../utils/weatherData";
 import styles from "./WeatherBlock.module.scss";
 
 
