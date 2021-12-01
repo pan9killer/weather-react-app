@@ -1,5 +1,5 @@
 import { whatADay } from "../utils/weatherData";
-const initialState = {};
+const initialState = {foo: 'bar'};
 
 const reducer = (state = initialState, action) => {
   switch(action.type){
@@ -10,6 +10,8 @@ const reducer = (state = initialState, action) => {
       return {...state, city: action.payload};
     case 'GET_WEATHER_IN_CITY':
       return {...state, state: action.payload};
+    case 'FOO':
+      return {...state, foo: action.payload}
     default:
       return state;
   };
