@@ -4,39 +4,33 @@ import SearchBlock from '../searchBlock';
 import WeatherBlock from '../weatherBlock';
 import {getWeatherDataFromInput, getWeatherDataOnLoad , getCityLatLon} from '../../services/api.service';
 import store from '../../store/store';
-import {getLatLonFromCity, getWeatherOnYourLocation, getWeatherFromInput, setFoo} from "../../actions/actions";
-import { connect } from 'react-redux';
+import {getLatLonFromCity, getWeatherOnYourLocation, getWeatherFromInput} from "../../actions/actions";
+import { connect, useDispatch } from 'react-redux';
 
-const App = ({getLatLonFromCity, foo, setFoo}) => {
-  const[weather1, setWeather1] = useState({});
-  const[weather2, setWeather2] = useState({});
-  const[cityLatLon, setCityLatLon] = useState({});
+const App = ({getLatLonFromCity, foo, setFoo, data, weather, getWeatherOnYourLocation}) => {
 
-  useEffect(()=>{
-    const changeState = async() =>{
-    let getSymbols = await getWeatherDataFromInput();
-    let fromTo = await getWeatherDataOnLoad();
-    let getCity = await getCityLatLon('Minsk');
-    setWeather1(getSymbols);
-    setWeather2(fromTo)
-    setCityLatLon(getCity)
-    };
-    changeState();
-  }, [])
+  // const getWeatherOnYourLocations = () => { return async(dispatch, getState)=>{
+  //   const location = await getWeatherDataOnLoad()
+  //   dispatch({type: 'MY_LOCATION_WEATHER', payload: location})
+  // }}
 
-  // console.log(weather1);
-  console.log(weather2);
-  // console.log(cityLatLon);
+  const dispatch = useDispatch();
+
+  useEffect(async()=>{
+    const data = await getWeatherDataOnLoad();
+    dispatch(getWeatherOnYourLocation(data))
+  },[])
 
   const state = store.getState();
-  console.log(state);
+  console.log(state.weather);
+
 
 
   return (
     <div className={styles.app}>
-      <SearchBlock city={cityLatLon}/>
-      <button onClick={setFoo}>lolalal</button>
-      {/* <div>{foo}</div> */}
+      <SearchBlock />
+      {/* <button onClick={getWeatherOnYourLocation()}>lolalal</button> */}
+      {/* {console.log(weather, data, getWeatherOnYourLocation, state)} */}
       <WeatherBlock />
     </div>
   );
@@ -44,7 +38,6 @@ const App = ({getLatLonFromCity, foo, setFoo}) => {
 
 export default connect(
   (state)=>({
-    foo: state.foo
+    data: state.weather
   })
-, {getWeatherDataOnLoad, getLatLonFromCity, setFoo})(App);
-// export default App;
+, {getWeatherDataOnLoad, getLatLonFromCity, getWeatherOnYourLocation})(App);

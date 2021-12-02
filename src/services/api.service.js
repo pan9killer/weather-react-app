@@ -13,13 +13,10 @@ navigator.geolocation.getCurrentPosition(showPosition);
 
 export async function getWeatherDataOnLoad(){
   try{
-    
-    console.log(latlon);
     const getWeatherDataOnLoad = await instance.get(`onecall`, {
       params: {
         lat: latlon.latitude,
         lon: latlon.longitude,
-        // exclude: 'daily',
         lang: 'ru',
         units: 'metric',
         appid: '15e2d862129fa12a6ba6633847af27ed'
@@ -27,7 +24,6 @@ export async function getWeatherDataOnLoad(){
     })
     .then((response) => response.data);
     // getWeatherDataOnLoad.daily.forEach(dt => console.log(whatADay(dt.dt)));
-    console.log(getWeatherDataOnLoad);
     return getWeatherDataOnLoad;
   }catch(err){
     console.log(err);

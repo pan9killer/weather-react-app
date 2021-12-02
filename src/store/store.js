@@ -1,8 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import reducer from './reducer';
-import thunk from 'redux-thunk';
-// import { applyMiddleware } from 'redux';
-
 
 const middleware = getDefaultMiddleware({
   immutableCheck: false,
