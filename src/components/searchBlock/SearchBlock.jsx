@@ -9,8 +9,8 @@ const SearchBlock = (city) => {
         type="text" 
         className="form-control" 
         placeholder="City" 
-        aria-label="Recipient's username" a
-        ria-describedby="button-addon2" />
+        aria-label="Recipient's username" 
+        aria-describedby="button-addon2" />
         <button className="btn btn-outline-secondary" 
         type="button" 
         id="button-addon2"

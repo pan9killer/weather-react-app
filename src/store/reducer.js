@@ -1,4 +1,4 @@
-import { whatADay } from "../utils/weatherData";
+// import { whatADay } from "../utils/weatherData";
 const initialState = {};
 
 const reducer = (state = initialState, action) => {
@@ -8,7 +8,7 @@ const reducer = (state = initialState, action) => {
     case 'CITY_LAT_LOT':
       return {...state, city: action.payload};
     case 'GET_WEATHER_IN_CITY':
-      return {...state, state: action.payload};
+      return {...state, weather: action.payload};
     case 'FOO':
       return {...state, data: action.payload}
     default:

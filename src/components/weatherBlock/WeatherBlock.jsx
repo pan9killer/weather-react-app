@@ -1,9 +1,12 @@
 import { BarChart, Bar, XAxis, YAxis } from "recharts";
 import {weatherData} from "../../utils/weatherData";
 import styles from "./WeatherBlock.module.scss";
+import store from '../../store/store';
 
 
 const WeatherBlock = () => {
+  const state = store.getState();
+  console.log(state);
   return (
     <div className={styles.wather__block}>
     <BarChart width={800} height={400} data={weatherData}>
@@ -14,5 +17,4 @@ const WeatherBlock = () => {
     </div>
   );
 }
-
 export default WeatherBlock;
