@@ -30,13 +30,13 @@ export async function getWeatherDataOnLoad(){
   }
 }
 
-export async function getWeatherDataFromInput(){
+export async function getWeatherDataAPI(data){
   try{
     const getWeatherDataFromInput = await instance.get(`onecall`, {
       params: {
-        lat: -0.1257,
-        lon: 51.5085,
-        exclude: 'daily',
+        lat: data.latitude,
+        lon: data.longitude,
+        exclude: 'hourly,minutely',
         lang: 'ru',
         units: 'metric',
         appid: '15e2d862129fa12a6ba6633847af27ed'

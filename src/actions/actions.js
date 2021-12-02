@@ -1,8 +1,8 @@
-import {getWeatherDataOnLoad, getWeatherDataFromInput, getCityLatLon} from '../services/api.service';
+import {getCityLatLon} from '../services/api.service';
 
 export const getWeatherOnYourLocation = (payload) => ({type: 'MY_LOCATION_WEATHER', payload});
 // export const getLanLotFromCity = () => ({type: 'CITY_LAT_LOT', payload: getCityLatLon()});
-export const getWeatherFromInput = () => ({type: 'GET_WEATHER_IN_CITY', payload: getWeatherDataFromInput()});
+export const getWeatherData = (payload) => ({type: 'GET_WEATHER_IN_CITY', payload});
 
 
 
