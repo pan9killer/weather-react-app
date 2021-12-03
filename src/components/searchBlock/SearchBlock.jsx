@@ -9,7 +9,6 @@ const SearchBlock = () => {
   const inputEl = useRef('');
   const dispatch = useDispatch();
   const state = useSelector(state => state);
-  console.log(state);
 
   const findCity = async(e) => {
     e.preventDefault();
