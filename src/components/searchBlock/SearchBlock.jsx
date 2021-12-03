@@ -8,7 +8,7 @@ import { getWeatherData } from "../../actions/actions";
 const SearchBlock = () => {
   const inputEl = useRef('');
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  useSelector(state => state);
 
   const findCity = async(e) => {
     e.preventDefault();

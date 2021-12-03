@@ -11,12 +11,12 @@ const WeatherBlock = () => {
 
   useEffect(() => {
     if(state.weather){
-      setWeather(state.weather.daily.map(dayData => {
+      return setWeather(state.weather.daily.map(dayData => {
         return {
           name: whatADay(dayData.dt), 
           uv: Math.floor(dayData.temp.eve)
-        }}));
-      return weather
+        }
+      }));
     }
   }, [state.weather]);
 
