@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
   const dispatch = useDispatch();
-  const state = useSelector(state => state);
+  useSelector(state => state);
 
   useEffect(
     () => {
