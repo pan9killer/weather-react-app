@@ -11,7 +11,7 @@ const WeatherBlock = () => {
   
   useEffect(() => {
     if(state.weather){
-      const daysArray = getArrayOfDays();
+      const daysArray = getArrayOfDays(state.weather.daily);
       setWeather(daysArray);
     }
   }, [state.weather]);

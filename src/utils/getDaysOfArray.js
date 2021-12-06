@@ -1,9 +1,7 @@
 import { whatADay } from '../utils/weatherData';
-import store from '../store/store';
 
-export const getArrayOfDays = () => {
-  const state = store.getState();
-  return state.weather.daily.map(dayData => {
+export const getArrayOfDays = (arr) => {
+  return arr.map(dayData => {
     return {
       dayOfWeek: whatADay(dayData.dt), 
       temp: Math.floor(dayData.temp.eve),
